@@ -15,8 +15,8 @@ class TopMovies(MRJob):
         yield None, line
 
     def reducer2(self, _, values):
-        sort = sorted(values, reverse=True)
-        for i in range(10):
+        sort = sorted(values, reverse=True)  # sorting
+        for i in range(10):  # Top Ten Movies
             yield i + 1, sort[i][1]
 
     def steps(self):
